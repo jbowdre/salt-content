@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+# vim: ft=jinja
+
+{#- Start imports #}
+{% import_yaml "onedir/defaults.yaml" as defaults %}
+{% import_yaml "onedir/osfamilymap.yaml" as osfamilymap %}
+{% import_yaml "onedir/osmap.yaml" as osmap %}
+
+{# merge the osfamilymap #}
+{% set osfamily_map = salt['grains.filter_by'](osfamilymap, grain='os_family') or {} %}
+{% do salt['defaults.merge'](defaults['salt'], osfamily_map) %}
+
+{# merge the osmap #}
+{% set os_map = salt['grains.filter_by'](osmap, grain='os') or {} %}
+{% do salt['defaults.merge'](defaults['salt'], os_map) %}
+
+
+{# merge in salt pillar #}
+{% set salt_settings = salt['pillar.get']('salt', default=defaults['salt'], merge=True) %}

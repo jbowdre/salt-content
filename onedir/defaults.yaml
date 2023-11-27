@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+salt:
+  version: '3006.4'
+  install_packages: true
+  use_pip: false
+
+  config_path: /etc/salt
+
+  minion_remove_config: false
+
+  minion_service: salt-minion
+  minion_service_details:
+    state: running
+    enabled: true
+
+  salt_minion: salt-minion
+
+  pkgrepo: ''
+
+  retry_options:
+    attempts: 2
+    until: true
+    interval: 10
+    splay: 10
+

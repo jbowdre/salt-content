@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+
+{%- set osrelease = salt['grains.get']('osrelease', '') %}
+{%- set salt_release = salt['pillar.get']('salt:release', 'latest') %}
+{%- set os_lower = salt['grains.get']('os')|lower %}
+{%- set osmajorrelease = salt['grains.get']('osmajorrelease', osrelease)|string %}
+{%- set oscodename = salt['grains.get']('oscodename') %}
+{%- set osfamily_lower = salt['grains.get']('os_family')|lower %}
+{%- set salt_repo = salt['pillar.get']('salt:repo', 'https://repo.saltproject.io/salt') %}
+
+Debian:
+  pkgrepo: 'deb [signed-by=/usr/share/keyrings/salt-archive-keyring-2023.gpg] {{ salt_repo }}/py3/{{ osfamily_lower }}/{{osmajorrelease }}/amd64/{{ salt_release }} {{ oscodename }} main'
+  pkgrepo_keyring: '{{ salt_repo }}/py3/{{ osfamily_lower }}/{{osmajorrelease }}/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg'
+  pkgrepo_keyring_hash: 'sha256=c6f6cbcd96fdb130b1dde8dcfc05d46a3a3f322ff0514f98e2e6473896243472'
+
+RedHat:
+  pkgrepo_name: saltstack
+  pkgrepo_humanname: SaltStack repo for RHEL/CentOS $releasever
+  pkgrepo: '{{ salt_repo }}/py3/redhat/{{ osmajorrelease }}/$basearch/{{ salt_release }}'
+  key_url: '{{ salt_repo }}/py3/redhat/{{ osmajorrelease }}/$basearch/SALT-PROJECT-GPG-PUBKEY-2023.pub'
+
