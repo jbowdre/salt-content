@@ -11,6 +11,3 @@ sleep 15
 
 # Restart the salt-minion service.
 systemctl restart salt-minion
-
-# Clean up
-rm -- "$0"

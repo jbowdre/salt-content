@@ -35,5 +35,3 @@ Upgrade RedHat minion:
       - file: /root/upgrade-minion.sh
 {%- endif %}
 {%- endif %}
-
-
