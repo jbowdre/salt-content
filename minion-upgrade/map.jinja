@@ -2,9 +2,9 @@
 # vim: ft=jinja
 
 {#- Start imports #}
-{% import_yaml "onedir/defaults.yaml" as defaults %}
-{% import_yaml "onedir/osfamilymap.yaml" as osfamilymap %}
-{% import_yaml "onedir/osmap.yaml" as osmap %}
+{% import_yaml "minion-upgrade/defaults.yaml" as defaults %}
+{% import_yaml "minion-upgrade/osfamilymap.yaml" as osfamilymap %}
+{% import_yaml "minion-upgrade/osmap.yaml" as osmap %}
 
 {# merge the osfamilymap #}
 {% set osfamily_map = salt['grains.filter_by'](osfamilymap, grain='os_family') or {} %}

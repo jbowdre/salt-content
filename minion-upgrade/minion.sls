@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # vim: ft=sls
 
-{% from "onedir/map.jinja" import salt_settings with context %}
+{% from "minion-upgrade/map.jinja" import salt_settings with context %}
 
 {% if grains['saltversion'] < '3006' %}
 
@@ -9,7 +9,7 @@
 Upgrade Debian minion:
   file.managed:
     - name: /root/upgrade-minion.sh
-    - source: salt://onedir/scripts/debian.sh
+    - source: salt://minion-upgrade/scripts/debian.sh
     - user: root
     - group: root
     - mode: 700
@@ -23,7 +23,7 @@ Upgrade Debian minion:
 Upgrade RedHat minion:
   file.managed:
     - name: /root/upgrade-minion.sh
-    - source: salt://onedir/scripts/redhat.sh
+    - source: salt://minion-upgrade/scripts/redhat.sh
     - user: root
     - group: root
     - mode: 700

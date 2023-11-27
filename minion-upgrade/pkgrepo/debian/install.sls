@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # vim: ft=sls
-{% from "onedir/map.jinja" import salt_settings with context %}
+{% from "minion-upgrade/map.jinja" import salt_settings with context %}
 
 {% if grains['saltversion'] < '3006' %}
 salt-pkgrepo-install-saltstack-debian-keyring:
