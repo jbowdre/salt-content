@@ -19,7 +19,9 @@ conditions of use.
     'cron.monthly',
     'cron.weekly'
   ]
-} %}
+}%}
+
+{% set session_timeout = '900' %}
 
 {% set sshd = {
   'configs': [
@@ -81,6 +83,6 @@ conditions of use.
   ] if grains['os_family'] == 'Debian' else [
     '/etc/bashrc'
   ]
-} %}
+}%}
 
 {% set _ = umask['files'].append('/etc/profile') %}
