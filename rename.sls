@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
 # Save into salt://rename.sls then run the following command:
 # salt-run state.orch rename pillar='{"old": "OLD_NAME", "new": "NEW_NAME"}'
 #
 # For more tips like this, follow https://twitter.com/SaltTips
+---
 
 {% set old_name = pillar['old'] %}
 {% set new_name = pillar['new'] %}

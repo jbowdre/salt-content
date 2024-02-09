@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+# State to use ntfy.sh to send notifications when a salt minion has finished booting
+---
+
 ntfy_push:
   file.managed:
     - name: /usr/local/bin/ntfy_push.sh
