@@ -1,0 +1,8 @@
+[Unit]
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/ntfy_boot_complete.sh
+
+[Install]
+WantedBy=default.target
