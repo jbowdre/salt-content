@@ -2,6 +2,7 @@
 # vim: ft=yaml
 # States to apply *extremely basic* security posture.
 ---
+
 include:
   - .banner
   - .cron

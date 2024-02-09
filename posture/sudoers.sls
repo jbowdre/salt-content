@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 ---
+
 configure_sudoers_defaults:
   file.managed:
     - name: /etc/sudoers.d/00-defaults

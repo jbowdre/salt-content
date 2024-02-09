@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 ---
+
 {% from "./map.jinja" import umask %}
 
 default_umask:

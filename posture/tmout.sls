@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 ---
+
 session_timeout:
   file.managed:
     - name: /etc/profile.d/tmout.sh

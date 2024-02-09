@@ -37,8 +37,6 @@ sshd_posture:
       - '{{ config }}'
       {% endfor %}
 
-
-
 sshd_service_running:
   service.running:
     - name: sshd

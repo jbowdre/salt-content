@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 ---
+
 {% from "./map.jinja" import banner %}
 
 logon_banner_text:
