@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 ---
+install_sudo:
+  pkg.installed:
+    - name: sudo
 
 configure_sudoers_defaults:
   file.managed:
@@ -11,3 +14,5 @@ configure_sudoers_defaults:
       - Defaults logfile=/var/log/sudo.log
       - Defaults timestamp_timeout=15
     - check_cmd: 'visudo -c -f'
+    - require:
+      - pkg: install_sudo
