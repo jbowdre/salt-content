@@ -1,5 +1,5 @@
 [Unit]
-After=network.target
+After=network-pre.target systemd-resolved.service
 
 [Service]
 ExecStart=/usr/local/bin/ntfy_boot_complete.sh
