@@ -32,7 +32,7 @@ ntfy_boot_complete_service_definition:
     - mode: 644
 
 ntfy_boot_complete_service:
-  service.running:
+  service.enabled:
     - name: ntfy_boot_complete
     - enable: True
     - unmask: True
