@@ -9,8 +9,7 @@ curl:
   pkg.installed
 
 tailscale:
-  pkg.installed:
-    - version: latest
+  pkg.installed
 
 netdata-kickstart:
   cmd.run:
