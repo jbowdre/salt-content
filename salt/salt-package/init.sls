@@ -3,4 +3,4 @@
 ---
 
 include:
-  - .{{ grains['os_family']|lower }}-repo.sls
+  - .{{ grains['os_family']|lower }}-repo
