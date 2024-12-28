@@ -12,4 +12,3 @@ URIs: https://packages.broadcom.com/artifactory/saltproject-deb
 Signed-By: /etc/apt/keyrings/salt-archive-keyring.pgp
 Suites: stable
 Components: main
-
