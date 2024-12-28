@@ -4,4 +4,3 @@
 
 include:
   - .{{ grains['os_family']|lower }}-repo.sls
-{%- endif %}
