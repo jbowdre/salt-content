@@ -2,7 +2,7 @@
 # vim: ft=sls
 ---
 
-salt-pkgrepo-keyring-dir
+salt-pkgrepo-keyring-dir:
   file.directory:
     - name: /etc/apt/keyrings
     - user: root
