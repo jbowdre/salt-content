@@ -10,7 +10,7 @@ node-exporter-service:
   service.running:
     - name: prometheus-node-exporter
     - enable: True
-    require:
+    - require:
       - pkg: node-exporter-package
 
 
