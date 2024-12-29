@@ -2,6 +2,13 @@
 # vim: ft=sls
 ---
 
+salt-pkgrepo-keyring-dir
+  file.directory:
+    - name: /etc/apt/keyrings
+    - user: root
+    - group: root
+    - mode: 755
+
 salt-pkgrepo-install-keyring:
   file.managed:
     - name: /etc/apt/keyrings/salt-archive-keyring.pgp
